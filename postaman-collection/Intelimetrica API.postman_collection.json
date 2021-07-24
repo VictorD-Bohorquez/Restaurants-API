@@ -1,0 +1,193 @@
+{
+	"info": {
+		"_postman_id": "777393bc-c9e0-4b6f-8def-b427e6366f49",
+		"name": "Intelimetrica API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://restaurants-intel-api.herokuapp.com/getrestaurants",
+					"protocol": "https",
+					"host": [
+						"restaurants-intel-api",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"getrestaurants"
+					]
+				},
+				"description": "Gets all the resturants in the database"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Single",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://restaurants-intel-api.herokuapp.com/getrestaurants/851f799f-0852-439e-b9b2-df92c43e7672",
+					"protocol": "https",
+					"host": [
+						"restaurants-intel-api",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"getrestaurants",
+						"851f799f-0852-439e-b9b2-df92c43e7672"
+					]
+				},
+				"description": "Gets a single restaurant"
+			},
+			"response": []
+		},
+		{
+			"name": "Get by rate",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://restaurants-intel-api.herokuapp.com/getbyrate/2",
+					"protocol": "https",
+					"host": [
+						"restaurants-intel-api",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"getbyrate",
+						"2"
+					]
+				},
+				"description": "Gets restaurants by rate"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://restaurants-intel-api.herokuapp.com/delete-restaurant/31c5eb90-2a04-42c5-a6dc-3dd1c6ba0896",
+					"protocol": "https",
+					"host": [
+						"restaurants-intel-api",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"delete-restaurant",
+						"31c5eb90-2a04-42c5-a6dc-3dd1c6ba0896"
+					]
+				},
+				"description": "Deletes a restaurant by id"
+			},
+			"response": []
+		},
+		{
+			"name": "Create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"rating\": 4,\r\n\t\"name\": \"Restaurante 2\",\r\n\t\"site\": \"https://restaurante.com\",\r\n\t\"email\": \"restaurante@restaurante.com\",\r\n\t\"phone\": \"55 33 33 33 33\",\r\n\t\"street\": \"street 1\",\r\n\t\"city\":\"CDMX\",\r\n\t\"state\":\"CMDX\",\r\n\t\"lat\": 19.4400570537131,\r\n\t\"lng\":-99.1270470974249\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://restaurants-intel-api.herokuapp.com/create-restaurant",
+					"protocol": "https",
+					"host": [
+						"restaurants-intel-api",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"create-restaurant"
+					]
+				},
+				"description": "creates a new restaurant"
+			},
+			"response": []
+		},
+		{
+			"name": "Update",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"id\" : \"31c5eb90-2a04-42c5-a6dc-3dd1c6ba0896\",\r\n\t\"rating\": 4,\r\n\t\"name\": \"Restaurante uno\",\r\n\t\"site\": \"https://restaurante.com\",\r\n\t\"email\": \"restaurante@restaurante.com\",\r\n\t\"phone\": \"55 33 33 33 33\",\r\n\t\"street\": \"street 1\",\r\n\t\"city\":\"CDMX\",\r\n\t\"state\":\"CMDX\",\r\n\t\"lat\": 19.4400570537131,\r\n\t\"lng\":-99.1270470974249\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://restaurants-intel-api.herokuapp.com/update-restaurant",
+					"protocol": "https",
+					"host": [
+						"restaurants-intel-api",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"update-restaurant"
+					]
+				},
+				"description": "Updates a restaurant's information"
+			},
+			"response": []
+		},
+		{
+			"name": "Statistics",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://restaurants-intel-api.herokuapp.com/restaurants/statistics?latitude=19.4369541201093&longitude=-99.1300720732733&radius=90",
+					"protocol": "https",
+					"host": [
+						"restaurants-intel-api",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"restaurants",
+						"statistics"
+					],
+					"query": [
+						{
+							"key": "latitude",
+							"value": "19.4369541201093"
+						},
+						{
+							"key": "longitude",
+							"value": "-99.1300720732733"
+						},
+						{
+							"key": "radius",
+							"value": "90"
+						}
+					]
+				},
+				"description": "Radius search"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

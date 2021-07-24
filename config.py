@@ -1,0 +1,21 @@
+from decouple import config
+
+class Config:
+    pass
+
+class DevelopmentConfig(Config):
+    DEBUG = True
+    SQLALCHEMY_DATABASE_URI = 'postgresql://localhost/users'
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
+
+class ProductionConfig(Config):
+    DEBUG = False
+    SQLALCHEMY_DATABASE_URI=config('DATABASE_URL_SQL', default='localhost')
+    SQLALCHEMY_TRACK_MODIFICATIONS= False
+    CORS_HEADERS = 'Content-Type'
+    JSON_AS_ASCII = False
+
+config = {
+    'development': DevelopmentConfig,
+    'production': ProductionConfig
+}
